@@ -4,16 +4,27 @@ import java.util.Scanner;
 
 public class Average {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter numbers (separated by space): ");
-        String[] numbers = sc.nextLine().split(" ");
+    public static double sum(double[] nums) {
         double sum = 0;
-        for (String number : numbers) {
-            sum += Double.parseDouble(number);
+        for (double num : nums) {
+            sum += num;
         }
-        double average = sum / numbers.length;
-        System.out.println("Average: " + average);
-        sc.close();
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the length: ");
+        int length = in.nextInt();
+
+        System.out.println("Enter the numbers: ");
+        double[] nums = new double[length];
+        for (int i = 0; i < length; i++) {
+            nums[i] = in.nextDouble();
+        }
+
+        double average = sum(nums) / nums.length;
+        System.out.println("Average of an array is: " + average);
+        in.close();
     }
 }
