@@ -20,5 +20,6 @@ public class CheckArray {
             System.out.println("your number exists in the array");
         else
             System.out.println("your number does not exist in the array");
+        
     }
 }
